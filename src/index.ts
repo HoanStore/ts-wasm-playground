@@ -1,1 +1,12 @@
-console.log("✅ TypeScript + WASM 프로젝트 시작 준비 완료");
+// src/index.ts
+// @ts-ignore
+import { loadWasm } from '../wasm/hello';
+
+
+async function run() {
+    const wasm = await loadWasm();
+    const result = wasm.add(5, 15);
+    console.log('Result from WASM:', result);
+}
+
+run();
